@@ -13,4 +13,4 @@ configuration:
     project_menu:
       run: bin/bundle exec rails server --binding 0.0.0.0 --port 8000
       install: bin/env_setup && source ~/.rvm/scripts/rvm && rvm --default use 2.7.1 && bin/bundle install
-      test: RAILS_ENV=test bin/bundle exec rspec
+      test: RAILS_ENV=test bin/rake db:migrate && RAILS_ENV=test bin/bundle exec rspec
